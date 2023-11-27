@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv"
 import express from "express"
 import cors from "cors"
-import connectDB from "./mongodb/connect";
+import connectDB from "./mongodb/connect.js";
 
 dotenv.config();
 
@@ -19,7 +19,7 @@ const startServer = async () => {
     try {
         connectDB(process.env.MONGODB_URL);
         app.listen(5050, () => {
-            console.log(`Server listening on port ${5050}`);
+            console.log(`Server listening on port ${5050}, base url: http://localhost:5050`);
         })
     } catch (error) {
         console.log(error);
