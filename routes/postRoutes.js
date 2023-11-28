@@ -6,6 +6,8 @@ import Post from '../mongodb/models/post.js';
 
 dotenv.config();
 
+const router = express.Router();
+
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
@@ -43,4 +45,4 @@ router.route('/').post(async (req, res) => {
     }
 })
 
-const router = express.Router();
+export default router
